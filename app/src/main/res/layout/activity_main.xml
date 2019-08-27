@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         android:id="@+id/Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="@string/zero"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -26,7 +27,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Score:"
+        android:text="@string/score"
         app:layout_constraintBottom_toBottomOf="@+id/Score"
         app:layout_constraintEnd_toStartOf="@+id/Score"
         app:layout_constraintHorizontal_bias="0.904"
@@ -58,7 +59,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:onClick="rojo"
-        android:text="Rojo"
+        android:text="@string/rojo"
         app:layout_constraintBottom_toBottomOf="@+id/Verde"
         app:layout_constraintEnd_toStartOf="@+id/Verde"
         app:layout_constraintTop_toTopOf="@+id/Verde" />
@@ -72,7 +73,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="verde"
-        android:text="Verde"
+        android:text="@string/verde"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/Score"
         app:layout_constraintHorizontal_bias="0.08"
@@ -102,7 +103,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Verde"
         app:layout_constraintEnd_toEndOf="@+id/Azul"
         app:layout_constraintStart_toStartOf="@+id/Rojo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/shapeView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
