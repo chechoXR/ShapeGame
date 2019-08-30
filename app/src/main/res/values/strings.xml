@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Sergio Ramirez</string>
     <string name="score" >Score</string>
-    <string name="azul">Azul</string>
+    <string name="azul">AZUL</string>
     <string name="zero">0</string>
-    <string name="rojo">rojo</string>
-    <string name="verde">Verde</string>
+    <string name="rojo">ROJO</string>
+    <string name="verde">VERDE</string>
     <string name="shapeView">IV para ver figuras</string>
 </resources>

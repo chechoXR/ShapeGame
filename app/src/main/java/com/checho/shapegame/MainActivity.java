@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Paint p;
     private Bitmap bm;
     private Canvas c;
+    private int d;
 
     private Random rd;
     @Override
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.clayout).setBackgroundColor(Color.rgb(255,255,255));
         c.drawColor(Color.rgb(255,255,255));
 
-        int d = rd.nextInt(9);
+        d = rd.nextInt(9);
+        int f= rd.nextInt(2);
         float size=c.getHeight()/2f;
         float cx=bm.getWidth()/2f;
         float cy =bm.getHeight()/2f;
@@ -186,6 +188,42 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+        if(f==0)
+        {
+            red.setText("ROJO");
+            red.setBackgroundColor(Color.RED);
+
+            blue.setText("AZUL");
+            blue.setBackgroundColor(Color.BLUE);
+
+            green.setText("VERDE");
+            green.setBackgroundColor(Color.GREEN);
+
+        }
+        else
+        {
+            int r = rd.nextInt(255);
+            int g = rd.nextInt(255);
+            int b = rd.nextInt(255);
+
+            red.setText("CUADRADO");
+            red.setBackgroundColor(Color.rgb(r,g,b));
+
+             r = rd.nextInt(255);
+             g = rd.nextInt(255);
+             b = rd.nextInt(255);
+            blue.setText("CIRCULO");
+            blue.setBackgroundColor(Color.rgb(r,g,b));
+
+            r = rd.nextInt(255);
+            g = rd.nextInt(255);
+            b = rd.nextInt(255);
+            green.setText("TRIANGULO");
+            green.setBackgroundColor(Color.rgb(r,g,b));
+
+        }
+
         //*/
     }
 
@@ -193,13 +231,21 @@ public class MainActivity extends AppCompatActivity {
     public void rojo(View view){
 
 
+        String but = this.red.getText().toString();
 
         int s = Integer.parseInt(this.Score.getText().toString());
 
-        if(p.getColor() == (Color.RED))
+        if(but.equals("ROJO")) {
+            if (p.getColor() == (Color.RED))
+                this.Score.setText("" + (s += 10));
+            else
+                this.Score.setText("" + (s -= 10));
+        }
+        else if(but.equals("CUADRADO") && (d==3 || d== 4 || d==5) )
             this.Score.setText(""+(s+=10));
         else
             this.Score.setText(""+(s-=10));
+
 
 
         if(s>=100)
@@ -210,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if(s<=-50)
-        {
+         {
          veredicto.setTextColor(Color.RED);
          disable();
          this.veredicto.setText("Perdiste!");
@@ -221,12 +267,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verde(View view){
+
+        String but = this.green.getText().toString();
+
         int s = Integer.parseInt(this.Score.getText().toString());
 
-        if(p.getColor() == (Color.GREEN))
+        if(but.equals("VERDE")) {
+            if (p.getColor() == (Color.GREEN))
+                this.Score.setText("" + (s += 10));
+            else
+                this.Score.setText("" + (s -= 10));
+        }
+        else if(but.equals("TRIANGULO") && (d==6 || d== 7 || d==8) )
             this.Score.setText(""+(s+=10));
         else
             this.Score.setText(""+(s-=10));
+
+
         if(s>=100)
         {
             veredicto.setTextColor(Color.GREEN);
@@ -241,15 +298,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         rd();
+
     }
 
     public void azul(View view){
+        String but = this.blue.getText().toString();
 
         int s = Integer.parseInt(this.Score.getText().toString());
-        if(p.getColor() == (Color.BLUE))
+        if(but.equals("AZUL")) {
+            if (p.getColor() == (Color.BLUE))
+                this.Score.setText("" + (s += 10));
+            else
+                this.Score.setText("" + (s -= 10));
+        }
+        else if(but.equals("CIRCULO") && (d==0 || d== 1 || d==2) )
             this.Score.setText(""+(s+=10));
         else
             this.Score.setText(""+(s-=10));
+
         if(s>=100)
         {
             veredicto.setTextColor(Color.GREEN);
@@ -265,6 +331,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         rd();
+
     }
 
 
